@@ -7,7 +7,7 @@ import static lombok.AccessLevel.PRIVATE;
 @Data
 @FieldDefaults(level = PRIVATE)
 public class MyPastebin3000Request {
-    String data;
+    String text;
     long expirationTimeSeconds;
     PublicStatus publicStatus;
 }

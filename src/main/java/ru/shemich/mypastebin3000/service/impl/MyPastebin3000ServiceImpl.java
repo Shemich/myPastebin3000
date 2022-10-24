@@ -32,14 +32,14 @@ public class MyPastebin3000ServiceImpl implements MyPastebin3000Service {
     @Override
     public MyPastebin3000Response getByHash(String hash) {
         Paste paste = repository.getByHash(hash);
-        return new MyPastebin3000Response(paste.getData(), paste.isPublic());
+        return new MyPastebin3000Response(paste.getText(), paste.isPublic());
     }
 
     @Override
     public List<MyPastebin3000Response> getFirstPublicPaste() {
     List<Paste> list = repository.getListOfPublicAndAlive(publicListSize);
     return list.stream()
-            .map(paste -> new MyPastebin3000Response(paste.getData(), paste.isPublic()))
+            .map(paste -> new MyPastebin3000Response(paste.getText(), paste.isPublic()))
             .collect(Collectors.toList());
     }
 
@@ -47,7 +47,7 @@ public class MyPastebin3000ServiceImpl implements MyPastebin3000Service {
     public MyPastebin3000UrlResponse create(MyPastebin3000Request request) {
         int hash = generateId();
         Paste paste = new Paste();
-        paste.setData(request.getData());
+        paste.setText(request.getText());
         paste.setId(hash);
         paste.setLifetime(LocalDateTime.now().plusSeconds(request.getExpirationTimeSeconds()));
         paste.setHash(Integer.toHexString(hash));

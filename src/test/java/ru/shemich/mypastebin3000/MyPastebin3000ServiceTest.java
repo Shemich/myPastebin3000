@@ -9,7 +9,6 @@ import ru.shemich.mypastebin3000.exception.ModelNotFoundException;
 import ru.shemich.mypastebin3000.model.Paste;
 import ru.shemich.mypastebin3000.repository.MyPastebin3000Repository;
 import ru.shemich.mypastebin3000.service.MyPastebin3000Service;
-import ru.shemich.mypastebin3000.service.impl.MyPastebin3000ServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -33,7 +32,7 @@ public class MyPastebin3000ServiceTest {
     public void getExistHash(){
         Paste paste = new Paste();
         paste.setHash("1");
-        paste.setData("11");
+        paste.setText("11");
         paste.setPublic(true);
 
         when(pastebin3000Repository.getByHash("1")).thenReturn(paste);
