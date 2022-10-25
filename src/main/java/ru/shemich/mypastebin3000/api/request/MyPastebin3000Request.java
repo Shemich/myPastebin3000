@@ -1,13 +1,13 @@
 package ru.shemich.mypastebin3000.api.request;
 
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import static lombok.AccessLevel.PRIVATE;
 @Data
-@FieldDefaults(level = PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class MyPastebin3000Request {
     String text;
     long expirationTimeSeconds;
-    PublicStatus publicStatus;
+    boolean isPublic;
 }
