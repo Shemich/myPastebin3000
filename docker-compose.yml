@@ -1,10 +1,5 @@
 version: "3"
 services:
-  mypastebin3000:
-    container_name: MyPastebin3000
-    build: .
-    ports:
-      - 8080:8080
   postgres:
     image: library/postgres:13
     container_name: postgres

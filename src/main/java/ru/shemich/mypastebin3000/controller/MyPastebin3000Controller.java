@@ -15,11 +15,6 @@ public class MyPastebin3000Controller {
 
     private final MyPastebin3000Service myPastebin3000Service;
 
-    @GetMapping("/")
-    public Collection<MyPastebin3000Response> getPublicPasteList() {
-        return myPastebin3000Service.getFirstPublicPaste();
-    }
-
     @GetMapping("/{hash}")
     public MyPastebin3000Response getByHash(@PathVariable String hash) {
         return myPastebin3000Service.getByHash(hash);

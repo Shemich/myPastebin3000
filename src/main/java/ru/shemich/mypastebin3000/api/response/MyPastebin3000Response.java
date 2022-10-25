@@ -10,6 +10,6 @@ import static lombok.AccessLevel.PRIVATE;
 @FieldDefaults(level = PRIVATE)
 @RequiredArgsConstructor
 public class MyPastebin3000Response {
-    private final String text;
-    private final boolean isPublic;
+    final String text;
+    final boolean isPublic;
 }

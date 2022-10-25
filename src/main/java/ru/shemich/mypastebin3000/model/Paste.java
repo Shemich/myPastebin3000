@@ -23,7 +23,7 @@ public class Paste {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id", length = 6, nullable = false)
-    int id;
+    Integer id;
     @Column(name = "text")
     String text;
     @Column(name = "hash")

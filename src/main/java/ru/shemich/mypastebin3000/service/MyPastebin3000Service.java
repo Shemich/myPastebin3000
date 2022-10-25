@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface MyPastebin3000Service {
     MyPastebin3000Response getByHash(String hash);
-    List<MyPastebin3000Response> getFirstPublicPaste();
     MyPastebin3000UrlResponse create(MyPastebin3000Request request);
 }
