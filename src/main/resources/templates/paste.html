@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<h3>Paste Viewer</h3>
+
+<div class="container">
+<div th:switch="${paste}">
+    <h2 th:case="null">Paste not found!</h2>
+    <div th:case="*">
+        <h3>Text</h3>
+        <p><span th:text="${paste.text}"> </span></p>
+        <h3>Link</h3>
+        <p>http://localhost:8080/<span th:text="${paste.hash}"> </span></p>
+    </div>
+    <p><a href="/">Create paste</a></p>
+</div>
+</div>
+</body>
+</html>

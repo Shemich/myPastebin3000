@@ -1,7 +1,6 @@
 package ru.shemich.mypastebin3000.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,17 +23,14 @@ public class MyPastebin3000Controller {
     }
 
     @GetMapping("/{hash}")
-    public ResponseEntity<String> getByHash(@PathVariable String hash) {
+    public String getByHash(@PathVariable String hash, Model model) {
         Paste paste = myPastebin3000Service.getByHash(hash);
-        if (paste == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(paste.getText(), HttpStatus.OK);
-        }
+        model.addAttribute("paste", paste);
+        return "paste";
     }
 
     @PostMapping()
-    public String createPaste(@ModelAttribute MyPastebin3000Request request, Model model) {
+    public String createPaste(@ModelAttribute MyPastebin3000Request request) {
         Paste paste = new Paste();
         myPastebin3000Service.create(request, paste);
         return "redirect:/" + paste.getHash();
