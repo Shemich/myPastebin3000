@@ -29,6 +29,4 @@ public class Paste {
     String hash;
     @Column(name = "lifetime")
     LocalDateTime lifetime;
-    @Column(name = "is_public")
-    boolean isPublic;
 }

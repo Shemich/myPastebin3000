@@ -46,19 +46,11 @@
         <textarea id="text" name="text" placeholder="Write something.." style="height:300px"></textarea>
         <label for="expirationTimeSeconds">Expiration time</label>
         <select id="expirationTimeSeconds" name="expirationTimeSeconds" style="width:12%">
-            <option value="100">1 Minutes</option>
             <option value="1000">1 Hour</option>
             <option value="10000">1 Day</option>
             <option value="100000">1 Week</option>
             <option value="1000000">1 Month</option>
         </select>
-
-        <p></p>
-        <label>Private:</label>
-
-        <input type="checkbox" id="myCheck"  name="isPublic"  onclick="myFunction()">
-
-        <p id="textCheckBox" style="display:none">Paste is private!</p>
         <p></p>
         <input type="submit" value="Submit">
     </form>
@@ -66,16 +58,3 @@
 
 </body>
 </html>
-
-<script>
-    function myFunction() {
-        var checkBox = document.getElementById("myCheck");
-        var text = document.getElementById("textCheckBox");
-        if (checkBox.checked == true){
-            text.style.display = "block";
-
-        } else {
-            text.style.display = "none";
-        }
-    }
-</script>

@@ -21,7 +21,6 @@ import java.time.LocalDateTime;
 public class MyPastebin3000ServiceImpl implements MyPastebin3000Service {
 
     private String host;
-    private int public_list_size;
     private String secret;
     private final MyPastebin3000Repository repository;
 
@@ -33,7 +32,6 @@ public class MyPastebin3000ServiceImpl implements MyPastebin3000Service {
     @Override
     public String create(MyPastebin3000Request request, Paste paste) {
         paste.setText(request.getText());
-        paste.setPublic(request.isPublic());
         paste.setLifetime(LocalDateTime.now().plusSeconds(request.getExpirationTimeSeconds()));
         repository.save(paste);
 
