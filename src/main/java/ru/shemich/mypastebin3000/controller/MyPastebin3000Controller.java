@@ -35,13 +35,4 @@ public class MyPastebin3000Controller {
         myPastebin3000Service.create(request, paste);
         return "redirect:/" + paste.getHash();
     }
-
-   /* @PostMapping(consumes = "application/json")
-    public ResponseEntity<String> add(@RequestBody MyPastebin3000Request request) {
-        Paste paste = new Paste();
-        String url = myPastebin3000Service.create(request, paste);
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Location", paste.getHash());
-        return new ResponseEntity<>(url, httpHeaders, HttpStatus.CREATED);
-    }*/
 }

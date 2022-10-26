@@ -9,5 +9,4 @@ import lombok.experimental.FieldDefaults;
 public class MyPastebin3000Request {
     String text;
     long expirationTimeSeconds;
-    boolean isPublic;
 }
