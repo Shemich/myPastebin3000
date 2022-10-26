@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New paste</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${request}" method="post">
+    <label for="text">Text</label>
+    <input type="text" th:field="*{text}" id="text" placeholder="Paste text here...">
+    <label for="expirationTimeSeconds">Paste expiration</label>
+    <input type="text" th:field="*{expirationTimeSeconds}" id="expirationTimeSeconds" placeholder="1000">
+    <label for="isPublic">Private</label>
+    <input type="text" th:field="*{Public}" id="isPublic" placeholder="true/false">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
